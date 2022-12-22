@@ -1,6 +1,12 @@
+import Board from "./components/Board"
+import CreateGlobalStyle from './globalStyle'
+
 function App() {
   return (
-    <h1>My To-do App</h1>
+    <>
+      <Board />
+      <CreateGlobalStyle />
+    </>
   )
 }
 
