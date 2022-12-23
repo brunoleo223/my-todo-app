@@ -12,3 +12,7 @@ export const Container = styled.div`
         margin-bottom: 10px;
     }
 `;
+
+export const Level = styled.div`
+    grid-row-end: span 2;
+`;
