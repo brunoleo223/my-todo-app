@@ -2,9 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    padding: 20px;
-    border: 1px solid #fafaae;
-    background: #FFFFA5;
-    border-top: 30px solid #f7f7a6;
-    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #333;
+    height: 100%;
+
+    .card-header{
+        margin-bottom: 10px;
+    }
 `;

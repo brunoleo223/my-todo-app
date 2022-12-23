@@ -5,8 +5,6 @@ export default function Board() {
   return (
     <Container>
         <List />
-        <List />
-        <List />
     </Container>
   )
 }
