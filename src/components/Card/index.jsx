@@ -1,28 +1,28 @@
 import { Container } from "./style";
 
-export default function Card({ data, className }) {
+export default function Card({ data }) {
 
-  const descriptionSize = data.description.length;
-  let level = 0;
+  const descriptionLength = data.description.length;
+  let cardSize = 0;
 
-  if (descriptionSize <= 100) {
-    level = 0;
-  } else if (descriptionSize > 100 && descriptionSize <= 200) {
-    level = 1;
-  } else if (descriptionSize > 200 && descriptionSize <= 300) {
-    level = 2;
+  if (descriptionLength <= 100) {
+    cardSize = 0;
+  } else if (descriptionLength > 100 && descriptionLength <= 200) {
+    cardSize = 1;
+  } else if (descriptionLength > 200 && descriptionLength <= 300) {
+    cardSize = 2;
   } else {
-    level = 3;
+    cardSize = 3;
   }
 
   return (
-      <div className={`level-${level}`}>
+      <div className={`level-${cardSize}`}>
         <Container>
           <div className="card-header">
             <h3>{data.title}</h3>
           </div>
           <div className="card-body">
-            <p>{level}{data.description}</p>
+            <p>{data.description}</p>
           </div>
         </Container>
       </div>

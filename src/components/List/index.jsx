@@ -1,29 +1,30 @@
 import Card from "../Card";
 import { Container } from "./style";
 
+const card = [
+  {
+    title: "Card Title",
+    description: "Card Description",
+  },
+  {
+    title: "Card Title",
+    description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
+  },
+  {
+    title: "Card Title",
+    description: "Card Description Card Description Card Description Card Description",
+  },
+  {
+    title: "Card Title",
+    description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
+  },
+  {
+    title: "Card Title",
+    description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
+  }
+]
+
 export default function List() {
-  const card = [
-    {
-      title: "Card Title",
-      description: "Card Description",
-    },
-    {
-      title: "Card Title",
-      description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
-    },
-    {
-      title: "Card Title",
-      description: "Card Description Card Description Card Description Card Description",
-    },
-    {
-      title: "Card Title",
-      description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
-    },
-    {
-      title: "Card Title",
-      description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
-    }
-  ]
   return (
     <Container>
       <Card data={card[4]}/>

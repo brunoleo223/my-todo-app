@@ -14,5 +14,6 @@ export default createGlobalStyle`
 
     body{
         font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        color: #333;
     }
 `;
