@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, InputField } from "./style";
 
-export default function InputCard() {
+export default function InputCard({addNewCard}) {
     const [inputValue, setInputValue] = useState('');
     const [labelActive, setLabelActive] = useState(false);
 
@@ -15,6 +15,13 @@ export default function InputCard() {
         }
     }
 
+    function hancleNewNote(){
+        const title = 'Teste Novo';
+        const description = 'Bruno Leonardo';
+
+        addNewCard(title, description);
+    }
+
     return (
         <Container>
             <InputField active={labelActive}>
@@ -25,7 +32,7 @@ export default function InputCard() {
                     onKeyUp={handleInputText}
                     aria-label="Criar uma nota..."
                 ></div>
-                <button>Fechar</button>
+                <button onClick={hancleNewNote}>Fechar</button>
             </InputField>
         </Container>
     )
