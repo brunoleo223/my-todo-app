@@ -15,24 +15,30 @@ export default function InputCard({addNewCard}) {
         }
     }
 
-    function hancleNewNote(){
-        const title = 'Teste Novo';
-        const description = 'Bruno Leonardo';
+    function handleNewNote(e){
+        e.preventDefault();
 
-        addNewCard(title, description);
+        const title = e.target.elements.title;
+        const description = e.target.children.cardDescription;
+
+        addNewCard(title.value, description.innerHTML);
     }
 
     return (
         <Container>
             <InputField active={labelActive}>
-                <label>Criar uma nota...</label>
-                <div 
-                    className="cardDescription"
-                    contentEditable="true"
-                    onKeyUp={handleInputText}
-                    aria-label="Criar uma nota..."
-                ></div>
-                <button onClick={hancleNewNote}>Fechar</button>
+                <form onSubmit={handleNewNote}>
+                    <label>Criar uma nota...</label>
+                    <input type="text" placeholder="Título" name="title" />
+                    <div 
+                        id="cardDescription"
+                        className="cardDescription"
+                        contentEditable="true"
+                        onKeyUp={handleInputText}
+                        aria-label="Criar uma nota..."
+                    ></div>
+                    <button type="submit">Fechar</button>
+                </form>
             </InputField>
         </Container>
     )

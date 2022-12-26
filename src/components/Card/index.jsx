@@ -21,9 +21,7 @@ export default function Card({ data }) {
           <div className="card-header">
             <h3>{data.title}</h3>
           </div>
-          <div className="card-body">
-            <p>{data.description}</p>
-          </div>
+          <div className="card-body" dangerouslySetInnerHTML={{__html: data.description}}></div>
         </Container>
       </div>
   )

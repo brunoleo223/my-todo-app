@@ -26,6 +26,16 @@ export const InputField = styled.div`
         height: 100%;
     }
 
+    input{
+        width: 100%;
+        border: 0;
+        background: transparent;
+        display: ${props => props.active ? 'block' : 'none'};
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
     button{
         font-weight: bold;
         background: transparent;
