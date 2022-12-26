@@ -22,6 +22,10 @@ export default function InputCard({addNewCard}) {
         const description = e.target.children.cardDescription;
 
         addNewCard(title.value, description.innerHTML);
+
+        document.getElementById('title').value = '';
+        document.getElementById('cardDescription').innerHTML = '';
+        setLabelActive(false)
     }
 
     return (
@@ -29,7 +33,7 @@ export default function InputCard({addNewCard}) {
             <InputField active={labelActive}>
                 <form onSubmit={handleNewNote}>
                     <label>Criar uma nota...</label>
-                    <input type="text" placeholder="Título" name="title" />
+                    <input type="text" placeholder="Título" name="title" id="title" />
                     <div 
                         id="cardDescription"
                         className="cardDescription"
@@ -37,7 +41,7 @@ export default function InputCard({addNewCard}) {
                         onKeyUp={handleInputText}
                         aria-label="Criar uma nota..."
                     ></div>
-                    <button type="submit">Fechar</button>
+                    <button type="submit">Concluir</button>
                 </form>
             </InputField>
         </Container>
