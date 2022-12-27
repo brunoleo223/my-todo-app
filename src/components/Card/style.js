@@ -19,6 +19,10 @@ export const Container = styled.div`
     .card-header{
         margin-bottom: 10px;
     }
+
+    &.dragging{
+        opacity: 0;
+    }
 `;
 
 export const Level = styled.div`

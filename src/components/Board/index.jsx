@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import InputCard from "../InputCard";
 import List from "../List";
 import { Container } from "./style";
@@ -35,6 +37,10 @@ const card = [
   }
 ]
 
+export const ItemTypes = {
+  CARD: 'card'
+}
+
 export default function Board() {
   const [cards, setCards] = useState(card);
 
@@ -52,9 +58,11 @@ export default function Board() {
   }
   
   return (
-    <Container>
-        <InputCard addNewCard={addNewCard} />
-        <List cards={cards} />
-    </Container>
+    <DndProvider backend={HTML5Backend}>
+      <Container>
+          <InputCard addNewCard={addNewCard} />
+          <List cards={cards} />
+      </Container>
+    </DndProvider>
   )
 }
