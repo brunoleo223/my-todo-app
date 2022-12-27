@@ -17,7 +17,7 @@ export default function Card({ data }) {
 
   return (
       <div className={`level-${cardSize}`}>
-        <Container>
+        <Container color={data.color}>
           <div className="card-header">
             <h3>{data.title}</h3>
           </div>

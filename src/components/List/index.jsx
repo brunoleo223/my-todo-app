@@ -1,11 +1,11 @@
 import { Container } from "./style";
 import Card from "../Card";
 
-export default function List({card}) {
+export default function List({cards}) {
   return (
     <Container>
-      {[...card].reverse().map((card, index) => (
-        <Card key={index} data={card}/>
+      {[...cards].reverse().map((card) => (
+        <Card key={card.id} data={card}/>
       ))}
     </Container>
   )
