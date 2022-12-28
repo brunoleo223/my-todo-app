@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-export default function Card({ data }) {
+export default function Card({ data, openPanel }) {
 
   const descriptionLength = data.description.length;
   let cardSize = 0;
@@ -17,7 +17,7 @@ export default function Card({ data }) {
 
   return (
       <div className={`level-${cardSize}`}>
-        <Container color={data.color}>
+        <Container color={data.color} onClick={e => openPanel(data.id)}>
           <div className="card-header">
             <h3>{data.title}</h3>
           </div>

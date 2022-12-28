@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { loadInitialData } from "../../services/api";
+import EditPanel from "../EditPanel";
 import InputCard from "../InputCard";
 import List from "../List";
 import { Container } from "./style";
@@ -12,6 +13,8 @@ export const ItemTypes = {
 
 export default function Board() {
   const [cards, setCards] = useState(card);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [openedCard, setOpenedCard] = useState({});
 
   function addNewCard(title, description, color){
     const newCard = {
@@ -25,11 +28,29 @@ export default function Board() {
   
     setCards(newCards)
   }
+
+  function editCard(card){
+    const newCards = [...cards]
+    const index = newCards.findIndex(c => c.id === card.id);
+    newCards[index] = card;
+    setCards(newCards);
+  }
+
+  function openPanel(cardId){
+    const card = cards.find(card => card.id === cardId);
+    setOpenedCard(card);
+    setIsPanelOpen(true);
+  }
+
+  function closePanel(){
+    setIsPanelOpen(false);
+  }
   
   return (
     <Container>
         <InputCard addNewCard={addNewCard} />
-        <List cards={cards} />
+        <List cards={cards} openPanel={openPanel} />
+        <EditPanel isPanelOpen={isPanelOpen} openedCard={openedCard} editCard={editCard} closePanel={closePanel} />
     </Container>
   )
 }
