@@ -45,7 +45,6 @@ export default function InputCard({addNewCard}) {
         });
 
         e.target.nextElementSibling.classList.add('active')
-        
     }
 
     return (

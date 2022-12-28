@@ -21,6 +21,7 @@ export default function EditPanel({ isPanelOpen, openedCard, editCard, closePane
 
   return (
     <EditPanelContainer isPanelOpen={isPanelOpen} color={openedCard.color}>
+        <div className="close" onClick={closePanel}>asdf</div>
         <form onSubmit={handleEditCard}>
             <h1 className="titulo" id="titulo" name="titulo" contentEditable="true">
                 {openedCard.title ? openedCard.title : "Adicione um Título"}

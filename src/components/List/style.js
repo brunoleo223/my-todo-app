@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    max-width: 85%;
+    max-width: 100%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
     grid-gap: 15px;
     justify-content: center;
     padding: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
 
     & + div {
         border-left: 1px solid #ddd;

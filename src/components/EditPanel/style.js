@@ -12,15 +12,29 @@ const colors = {
 export const EditPanelContainer = styled.div`
     position: absolute;
     width: 100%;
-    max-width: 800px;
     height: 100%;
     top: 0;
-    background-color: ${props => props.color ? colors[props.color] : '#fff'};
-    z-index: 9;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    transition: all 0.2s ease-in-out;
+    display: flex;
+
     right: ${props => (props.isPanelOpen ? 0 : "-100%")};
+
+    .close{
+        flex: 1;
+        height: 100%;
+        background: #000;
+        opacity: 0.2;
+        z-index: 9;
+    }
+
+    form{
+        width: 100%;
+        max-width: 800px;
+        background-color: ${props => props.color ? colors[props.color] : '#fff'};
+        z-index: 9;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        padding: 40px;
+        transition: all 0.2s ease-in-out;
+    }
 
     .titulo{
         margin-bottom: 40px;

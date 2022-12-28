@@ -15,5 +15,7 @@ export default createGlobalStyle`
     body{
         font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
         color: #333;
+        width: 100%;
+        overflow-x: hidden;
     }
 `;
