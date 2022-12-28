@@ -1,41 +1,10 @@
 import { useState } from "react";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import { loadInitialData } from "../../services/api";
 import InputCard from "../InputCard";
 import List from "../List";
 import { Container } from "./style";
 
-const card = [
-  {
-    id: 0,
-    title: "Card Title",
-    description: "Card Description",
-  },
-  {
-    id: 1,
-    title: "Card Title",
-    description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
-    color: 'red',
-  },
-  {
-    id: 2,
-    title: "Card Title",
-    description: "Card Description Card Description Card Description Card Description",
-    color: 'yellow',
-  },
-  {
-    id: 3,
-    title: "Card Title",
-    description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
-    color: 'blue',
-  },
-  {
-    id: 4,
-    title: "Card Title",
-    description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
-    color: 'purple',
-  }
-]
+const card = loadInitialData();
 
 export const ItemTypes = {
   CARD: 'card'
@@ -58,11 +27,9 @@ export default function Board() {
   }
   
   return (
-    <DndProvider backend={HTML5Backend}>
-      <Container>
-          <InputCard addNewCard={addNewCard} />
-          <List cards={cards} />
-      </Container>
-    </DndProvider>
+    <Container>
+        <InputCard addNewCard={addNewCard} />
+        <List cards={cards} />
+    </Container>
   )
 }

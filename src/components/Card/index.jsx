@@ -1,5 +1,3 @@
-import { useDrag } from "react-dnd";
-import { ItemTypes } from "../Board";
 import { Container } from "./style";
 
 export default function Card({ data }) {
@@ -17,15 +15,8 @@ export default function Card({ data }) {
     cardSize = 3;
   }
 
-  const [{isDragging}, drag] = useDrag(() => ({
-    type: ItemTypes.CARD,
-    collect: monitor => ({
-      isDragging: !!monitor.isDragging(),
-    })
-  }))
-
   return (
-      <div className={`level-${cardSize}`} ref={drag}>
+      <div className={`level-${cardSize}`}>
         <Container color={data.color}>
           <div className="card-header">
             <h3>{data.title}</h3>
