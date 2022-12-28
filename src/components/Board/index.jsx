@@ -12,7 +12,15 @@ export const ItemTypes = {
 }
 
 export default function Board() {
-  const [cards, setCards] = useState(card);
+  const getCardsFromLocalStorage = () => {
+    const cards = localStorage.getItem('cards');
+    if (cards) {
+      return JSON.parse(cards);
+    }
+    return card;
+  }
+
+  const [cards, setCards] = useState(getCardsFromLocalStorage() || cards);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [openedCard, setOpenedCard] = useState({});
 
@@ -26,7 +34,9 @@ export default function Board() {
     const newCards = [...cards]
     newCards.push(newCard)
   
-    setCards(newCards)
+    setCards(newCards);
+
+    localStorage.setItem('cards', JSON.stringify(newCards));
   }
 
   function editCard(card){
