@@ -14,7 +14,8 @@ export const Container = styled.div`
     }
 
     .level-0, .level-1, .level-2, .level-3 {
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
+        position: relative;
 
     }
 

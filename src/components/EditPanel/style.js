@@ -19,6 +19,7 @@ export const EditPanelContainer = styled.div`
     z-index: 9;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     padding: 40px;
+    transition: all 0.2s ease-in-out;
     right: ${props => (props.isPanelOpen ? 0 : "-100%")};
 
     .titulo{

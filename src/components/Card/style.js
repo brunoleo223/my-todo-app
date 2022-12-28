@@ -15,13 +15,35 @@ export const Container = styled.div`
     border-radius: 5px;
     height: 100%;
     background-color: ${props => props.color ? colors[props.color] : '#fff'};
+    position: relative;
+
+    .icon{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: -10px;
+        left: -10px;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        opacity: 0;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .content{
+        height: 100%;
+        overflow: hidden;
+    }
 
     .card-header{
         margin-bottom: 10px;
     }
 
-    &.dragging{
-        opacity: 0;
+    &:hover{
+        box-shadow: 0 1.3px 2px rgba(0,0,0,0.2);
+        .icon{
+            opacity: 1;
+        }
     }
 `;
 

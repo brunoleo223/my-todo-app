@@ -50,7 +50,12 @@ export default function Board() {
     <Container>
         <InputCard addNewCard={addNewCard} />
         <List cards={cards} openPanel={openPanel} />
-        <EditPanel isPanelOpen={isPanelOpen} openedCard={openedCard} editCard={editCard} closePanel={closePanel} />
+        <EditPanel 
+          isPanelOpen={isPanelOpen} 
+          openedCard={openedCard} 
+          editCard={editCard} 
+          closePanel={closePanel} 
+        />
     </Container>
   )
 }
