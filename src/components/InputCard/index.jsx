@@ -28,9 +28,17 @@ export default function InputCard({addNewCard}) {
         const title = e.target.elements.title;
         const description = e.target.children.cardDescription;
         const color = e.target.elements.color.value;
+        
+        if (!description.innerText.replace(/\s/g, '').length) {
+            resetFields()
+            return;
+        }
 
         addNewCard(title.value, description.innerHTML, color);
+        resetFields()
+    }
 
+    function resetFields(){
         document.getElementById('title').value = '';
         document.getElementById('cardDescription').innerHTML = '';
         setIsLabelActive(false)
