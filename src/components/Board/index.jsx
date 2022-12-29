@@ -4,8 +4,9 @@ import EditPanel from "../EditPanel";
 import InputCard from "../InputCard";
 import List from "../List";
 import { Container } from "./style";
+import { v4 as uuid } from "uuid"
 
-const card = loadInitialData();
+const loadCards = loadInitialData();
 
 export const ItemTypes = {
   CARD: 'card'
@@ -17,15 +18,16 @@ export default function Board() {
     if (cards) {
       return JSON.parse(cards);
     }
-    return card;
+    return cards;
   }
 
-  const [cards, setCards] = useState(getCardsFromLocalStorage() || cards);
+  const [cards, setCards] = useState(getCardsFromLocalStorage() || loadCards);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [openedCard, setOpenedCard] = useState({});
 
   function addNewCard(title, description, color){
     const newCard = {
+      id: uuid(),
       title,
       description,
       color
@@ -34,9 +36,8 @@ export default function Board() {
     const newCards = [...cards]
     newCards.push(newCard)
   
-    setCards(newCards);
-
     localStorage.setItem('cards', JSON.stringify(newCards));
+    setCards(newCards);
   }
 
   function editCard(card){
@@ -47,6 +48,7 @@ export default function Board() {
   }
 
   function openPanel(cardId){
+    console.log(cardId)
     const card = cards.find(card => card.id === cardId);
     setOpenedCard(card);
     setIsPanelOpen(true);

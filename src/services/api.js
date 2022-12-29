@@ -1,30 +1,32 @@
+import { v4 as uuid } from "uuid";
+
 export function loadInitialData(){
     return [
         {
-            id: 0,
+            id: uuid(),
             title: "Card Title",
             description: "Card Description",
           },
           {
-            id: 1,
+            id: uuid(),
             title: "Card Title",
             description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
             color: 'red',
           },
           {
-            id: 2,
+            id: uuid(),
             title: "Card Title",
             description: "Card Description Card Description Card Description Card Description",
             color: 'yellow',
           },
           {
-            id: 3,
+            id: uuid(),
             title: "Card Title",
             description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
             color: 'blue',
           },
           {
-            id: 4,
+            id: uuid(),
             title: "Card Title",
             description: "Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description Card Description",
             color: 'purple',

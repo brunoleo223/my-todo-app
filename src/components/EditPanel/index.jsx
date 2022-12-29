@@ -1,6 +1,7 @@
 import { EditPanelContainer } from "./style";
 
 export default function EditPanel({ isPanelOpen, openedCard, editCard, closePanel }) {
+    console.log(openedCard)
 
     function handleEditCard(e){
         e.preventDefault();
