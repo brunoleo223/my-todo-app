@@ -57,7 +57,7 @@ export default function InputCard({addNewCard}) {
 
     return (
         <Container color={color}>
-            <InputField active={isLabelActive}>
+            <InputField active={isLabelActive} color={color}>
                 <form onSubmit={handleNewNote}>
                     <label className="intro">Criar uma nota...</label>
                     <input type="text" placeholder="Título" name="title" id="title" />

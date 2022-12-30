@@ -4,7 +4,8 @@ const colors = {
     red: '#ffe2e2',
     yellow: '#ffffe2',
     blue: '#e2f1ff',
-    purple: '#f0e6ff'
+    purple: '#f0e6ff',
+    default: '#fff'
 }
 
 export const Container = styled.div`
@@ -15,14 +16,13 @@ export const Container = styled.div`
     padding: 15px;
     border-radius: 5px;
     position: relative;
-    background: ${props => props.color ? colors[props.color] : '#fff'};
+    background: ${props => colors[props.color]};
 `;
 
 export const InputField = styled.div`
     .intro{
         position: absolute;
         opacity: ${props => props.active ? 0 : 1};
-        color: ${({ theme }) => theme.inputText}
     }
 
     .cardDescription{
@@ -33,7 +33,6 @@ export const InputField = styled.div`
         height: 100%;
         position: relative;
         z-index: 2;
-        color: ${({ theme }) => theme.inputText}
     }
 
     input{
