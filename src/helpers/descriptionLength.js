@@ -1,6 +1,6 @@
 export default function descriptionLength(descriptionLength) {
     let cardSize = 0;
-    
+
     if (descriptionLength <= 100) {
         cardSize = 0;
       } else if (descriptionLength > 100 && descriptionLength <= 200) {
@@ -10,6 +10,7 @@ export default function descriptionLength(descriptionLength) {
       } else {
         cardSize = 3;
     }
+    
   return cardSize;
 
 }

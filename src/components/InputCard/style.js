@@ -22,6 +22,7 @@ export const InputField = styled.div`
     .intro{
         position: absolute;
         opacity: ${props => props.active ? 0 : 1};
+        color: ${({ theme }) => theme.inputText}
     }
 
     .cardDescription{
@@ -32,6 +33,7 @@ export const InputField = styled.div`
         height: 100%;
         position: relative;
         z-index: 2;
+        color: ${({ theme }) => theme.inputText}
     }
 
     input{
@@ -44,6 +46,7 @@ export const InputField = styled.div`
         font-weight: bold;
         position: relative;
         z-index: 2;
+        color: ${({ theme }) => theme.inputText}
     }
 
     footer{
@@ -106,9 +109,10 @@ export const InputField = styled.div`
             padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
+            color: ${({ theme }) => theme.inputText};
 
             &:hover{
-                background: #f5f5f5;
+                background: ${({ theme }) => theme.inputHover};
             }
         }
     }

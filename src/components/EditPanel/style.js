@@ -10,7 +10,7 @@ const colors = {
 
 
 export const EditPanelContainer = styled.div`
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
     top: 0;
