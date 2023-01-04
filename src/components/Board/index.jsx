@@ -6,8 +6,6 @@ import { Container } from "./style";
 import { v4 as uuid } from "uuid"
 import { CardsContext } from "../../Contexts/CardsContext";
 
-
-
 export default function Board() {
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [openedCard, setOpenedCard] = useState({});

@@ -1,9 +1,9 @@
+import React from "react"
 import Board from "./components/Board"
 import { ThemeProvider } from "styled-components"
 import CreateGlobalStyle from './styles/globalStyle'
 import { darkTheme, lightTheme } from "./styles/Theme"
-import { useState } from "react"
-import { useDarkMode } from "./helpers/useDarkMode"
+import { useDarkMode } from "./hooks/useDarkMode"
 
 function App() {
   const [theme, themeToggler] = useDarkMode();
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <ThemeProvider theme={themeMode}>
-      <button className="themeToggler" onClick={themeToggler}>
+      <button className="themeToggler" onClick={themeToggler as () => void}>
         {
           theme === 'light' 
           ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
