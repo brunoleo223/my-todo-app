@@ -1,14 +1,15 @@
-import styled from "styled-components";
-const colors = {
-    green: '#e2ffef',
-    red: '#ffe2e2',
-    yellow: '#ffffe2',
-    blue: '#e2f1ff',
-    purple: '#f0e6ff',
-    default: '#fff'
-}
+import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+const colors = {
+  green: '#e2ffef',
+  red: '#ffe2e2',
+  yellow: '#ffffe2',
+  blue: '#e2f1ff',
+  purple: '#f0e6ff',
+  default: '#fff'
+} as const
+
+export const Container = styled.div<any>`
     width: 100%;
     max-width: 600px;
     border: 1px solid #ddd;
@@ -19,7 +20,9 @@ export const Container = styled.div`
     background: ${props => colors[props.color]};
 `;
 
-export const InputField = styled.div`
+// TODO - criar uma interface para o active que não existe, e remover a tipagem any
+
+export const InputField = styled.div<any>`
     .intro{
         position: absolute;
         opacity: ${props => props.active ? 0 : 1};
@@ -58,49 +61,6 @@ export const InputField = styled.div`
             position: absolute;
             left: -5000px;
         }
-        .labels{
-            display: flex;
-            background: #000;
-            gap: 5px;
-            padding: 5px;
-            border-radius: 20px;
-
-            label{
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                display: block;
-                cursor: pointer;
-
-                &.green{
-                    background: #e2ffef;
-                }
-
-                &.red{
-                    background: #ffe2e2;
-                }
-
-                &.yellow{
-                    background: #ffffe2;
-                }
-
-                &.blue{
-                    background: #e2f1ff;
-                }
-
-                &.purple{
-                    background: #f0e6ff;
-                }
-
-                &.default{
-                    background: #fff;
-                }
-
-                &.active{
-                    border: 2px solid #ddd;
-                }
-            }
-        }
         button{
             font-weight: bold;
             background: transparent;
@@ -116,3 +76,29 @@ export const InputField = styled.div`
         }
     }
 `;
+
+export const LabelContainer = styled.div`
+  display: flex;
+  background: #000;
+  gap: 5px;
+  padding: 5px;
+  border-radius: 20px;
+`
+
+interface LabelProps {
+  customColor: string
+}
+
+export const Label = styled.label<LabelProps>`
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+
+  ${({ customColor }) => css`background: ${colors[customColor]};`}
+
+  &.active{
+      border: 2px solid #ddd;
+  }
+`
