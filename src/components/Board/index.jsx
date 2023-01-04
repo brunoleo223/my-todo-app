@@ -1,29 +1,17 @@
-import { useState } from "react";
-import { loadInitialData } from "../../services/api";
+import { useContext, useState } from "react";
 import EditPanel from "../EditPanel";
 import InputCard from "../InputCard";
 import List from "../List";
 import { Container } from "./style";
 import { v4 as uuid } from "uuid"
+import { CardsContext } from "../../Contexts/CardsContext";
 
-const loadCards = loadInitialData();
 
-export const ItemTypes = {
-  CARD: 'card'
-}
 
 export default function Board() {
-  const getCardsFromLocalStorage = () => {
-    const cards = localStorage.getItem('cards');
-    if (cards) {
-      return JSON.parse(cards);
-    }
-    return cards;
-  }
-
-  const [cards, setCards] = useState(getCardsFromLocalStorage() || loadCards);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
   const [openedCard, setOpenedCard] = useState({});
+  const {cards, setCards} = useContext(CardsContext)
 
   function addNewCard(title, description, color){
     const newCard = {
@@ -48,7 +36,6 @@ export default function Board() {
   }
 
   function openPanel(cardId){
-    console.log(cardId)
     const card = cards.find(card => card.id === cardId);
     setOpenedCard(card);
     setIsPanelOpen(true);
