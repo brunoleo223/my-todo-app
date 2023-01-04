@@ -7,4 +7,4 @@ export const Container = Styled.div`
     padding: 80px 30px;
     overflow-x: hidden;
     width: 100%;
-`;
+`

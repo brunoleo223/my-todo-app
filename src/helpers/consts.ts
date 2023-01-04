@@ -1,0 +1,1 @@
+export const removeNullSpaces = /\s/g
