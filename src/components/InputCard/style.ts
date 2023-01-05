@@ -81,7 +81,7 @@ footer{
 
 export const LabelContainer = styled.div`
     display: flex;
-    background: #000;
+    /* background: #000; */
     gap: 5px;
     padding: 5px;
     border-radius: 20px;
@@ -98,10 +98,8 @@ export const Label = styled.label<LabelProps>`
     border-radius: 50%;
     display: block;
     cursor: pointer;
+    border: 1px solid #000;
 
     ${({ customColor }) => css`background: ${colors[customColor]}`};
-
-    &.active{
-      border: 2px solid #ddd;
-  }
+    ${({ isActive }) => css`border-color: ${isActive ? '#000' : '#ddd'}`};
 `;

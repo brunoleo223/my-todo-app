@@ -12,6 +12,11 @@ const colors = [
     {color: 'purple', hex: '#f0e6ff'}
 ];
 
+interface ColorsProps{
+    color: string;
+    hex: string;
+}
+
 type ColorsType =  "green" | "red" | "yellow" | "blue" | "purple" | "default";
 
 export default function InputCard() {
@@ -52,8 +57,9 @@ export default function InputCard() {
         setIsLabelActive(false)
     }
 
-    function changeColor(color: string){
-        setColor(color)
+    function changeColor(color: any){
+        setColor(color);
+        setSelectedColor(color);
     }
 
     return (
@@ -82,14 +88,14 @@ export default function InputCard() {
                             ))}
                             <LabelContainer>
                                 {
-                                    colors.map(item => {
+                                    colors.map(( item: ColorsProps ) => {
                                         return (
                                             <Label 
                                                 key={item.color}
                                                 htmlFor="default" 
                                                 customColor={item.color} 
                                                 isActive={selectedColor === item.color}
-                                                onClick={ () => changeColor(item.color) } 
+                                                onClick={ () => changeColor( item.color ) } 
                                             />
                                         )
                                     })
