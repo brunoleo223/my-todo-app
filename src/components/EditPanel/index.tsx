@@ -1,3 +1,4 @@
+import React from "react";
 import { EditPanelContainer } from "./style";
 
 export default function EditPanel({ isPanelOpen, openedCard, editCard, closePanel }) {
@@ -23,10 +24,10 @@ export default function EditPanel({ isPanelOpen, openedCard, editCard, closePane
     <EditPanelContainer isPanelOpen={isPanelOpen} color={openedCard.color}>
         <div className="close" onClick={closePanel}>asdf</div>
         <form onSubmit={handleEditCard}>
-            <h1 className="titulo" id="titulo" name="titulo" contentEditable="true">
+            <h1 className="titulo" id="titulo" contentEditable="true">
                 {openedCard.title ? openedCard.title : "Adicione um Título"}
             </h1>
-            <div contentEditable="true" className="description" id="description" name="description">
+            <div contentEditable="true" className="description" id="description">
                 {openedCard.description}
             </div>
             <footer>

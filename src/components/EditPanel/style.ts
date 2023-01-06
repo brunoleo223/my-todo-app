@@ -8,8 +8,11 @@ const colors = {
     purple: '#f0e6ff'
 }
 
+interface EditPanelContainerProps {
+    isPanelOpen: boolean;
+}
 
-export const EditPanelContainer = styled.div`
+export const EditPanelContainer = styled.div<EditPanelContainerProps>`
     position: fixed;
     width: 100%;
     height: 100%;
