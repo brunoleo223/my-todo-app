@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
-import { getCardsFromLocalStorage } from "../helpers/getCardsFromLocalStorage";
 import { loadInitialData } from "../services/api";
 import { v4 as uuid } from "uuid"
+import { getCardsFromLocalStorage } from "../helpers/helperFunctions";
 
 interface CardsContextProps {
     cards: any;

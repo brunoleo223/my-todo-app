@@ -23,7 +23,7 @@ export default function Board() {
   return (
     <Container>
         <InputCard />
-        <List cards={cards} openPanel={openPanel} />
+        <List openPanel={openPanel} />
         <EditPanel 
           isPanelOpen={isPanelOpen} 
           openedCard={openedCard} 

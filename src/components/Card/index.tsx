@@ -1,4 +1,5 @@
-import descriptionLength from "../../helpers/descriptionLength";
+import React from "react";
+import descriptionLength from "../../helpers/helperFunctions";
 import { Container } from "./style";
 
 export default function Card({ data, openPanel }) {

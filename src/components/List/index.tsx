@@ -1,7 +1,11 @@
+import React, { useContext } from "react";
 import { Container } from "./style";
 import Card from "../Card";
+import { CardsContext } from "../../Contexts/CardsContext";
 
-export default function List({cards, openPanel}) {
+export default function List({openPanel}) {
+
+  const {cards} = useContext(CardsContext);
 
   return (
     <Container>
