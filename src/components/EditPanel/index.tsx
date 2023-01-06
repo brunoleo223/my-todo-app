@@ -1,4 +1,3 @@
-import React from "react";
 import { EditPanelContainer } from "./style";
 
 export default function EditPanel({ isPanelOpen, openedCard, editCard, closePanel }) {

@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "jsx": "react-jsx",
+        "lib": [
+            "es5", "es6", "dom", "dom.iterable"
+        ]
+    }
+}

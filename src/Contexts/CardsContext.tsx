@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { loadInitialData } from "../services/api";
 import { v4 as uuid } from "uuid"
 import { getCardsFromLocalStorage } from "../helpers/helperFunctions";
@@ -9,7 +9,7 @@ interface CardsContextProps {
     editCard(card: CardProps): void;
 }
 
-interface CardProps {
+export interface CardProps {
     id: string;
     title: string;
     description: string;
@@ -20,8 +20,22 @@ export const CardsContext = createContext({} as CardsContextProps);
 
 
 export const CardsProvider =({ children }) => {
-    const loadCards = loadInitialData();
-    const [cards, setCards] = useState<CardProps[]>(getCardsFromLocalStorage() || loadCards);
+    const [cards, setCards] = useState<CardProps[]>([]);
+
+    useEffect(() => {
+        const cards: CardProps[] = getCardsFromLocalStorage();
+        if(cards){
+            setCards(cards);
+        } else {
+            loadCards();
+        }
+    }, [])
+    
+    async function loadCards(){
+        const cards = await loadInitialData();
+        setCards(cards);
+        localStorage.setItem('cards', JSON.stringify(cards));
+    }
     
     function addNewCard(title: string, description: string, color: string){
         const newCard: CardProps = {
@@ -32,10 +46,10 @@ export const CardsProvider =({ children }) => {
         }
         
         setCards((state) => {
-            const newCards = [...state, newCard]
+            const newCards = [...state, newCard];
             localStorage.setItem('cards', JSON.stringify(newCards));
             return newCards;
-        });
+        })
     }
     
     function editCard(card: CardProps){
@@ -53,7 +67,7 @@ export const CardsProvider =({ children }) => {
     
     return (
         <CardsContext.Provider value={{cards, addNewCard, editCard}}>
-        {children}
+            {children}
         </CardsContext.Provider>
         )
     }

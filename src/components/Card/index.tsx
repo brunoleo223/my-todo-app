@@ -1,4 +1,3 @@
-import React from "react";
 import descriptionLength from "../../helpers/helperFunctions";
 import { Container } from "./style";
 

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { CardsContext } from "../../Contexts/CardsContext";
 import { regexToRemoveSpaces } from "../../helpers/consts";
 import { Container, InputField, Label, LabelContainer } from "./style";
