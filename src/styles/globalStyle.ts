@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { ThemeProps } from "./Theme";
 
-export default createGlobalStyle`
+export default createGlobalStyle<ThemeProps>`
     *{
         margin: 0;
         padding: 0;
