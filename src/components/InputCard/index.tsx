@@ -17,12 +17,10 @@ interface ColorsProps{
     hex: string;
 }
 
-type ColorsType =  "green" | "red" | "yellow" | "blue" | "purple" | "default";
-
 export default function InputCard() {
     const [isLabelActive, setIsLabelActive] = useState(false);
     const [color, setColor] = useState('default');
-    const [selectedColor, setSelectedColor] = useState<ColorsType>('default');
+    const [selectedColor, setSelectedColor] = useState<ColorsProps>( colors[0] );
     const { addNewCard } = useContext(CardsContext)
 
     function handleInputText(e){
@@ -57,8 +55,8 @@ export default function InputCard() {
         setIsLabelActive(false)
     }
 
-    function changeColor(color: any){
-        setColor(color);
+    function changeColor(color: ColorsProps){
+        setColor(color.color);
         setSelectedColor(color);
     }
 
@@ -94,8 +92,8 @@ export default function InputCard() {
                                                 key={item.color}
                                                 htmlFor="default" 
                                                 customColor={item.color} 
-                                                isActive={selectedColor === item.color}
-                                                onClick={ () => changeColor( item.color ) } 
+                                                isActive={selectedColor.color === item.color}
+                                                onClick={ () => changeColor( item ) } 
                                             />
                                         )
                                     })
